@@ -39,3 +39,7 @@
 /Users/mac/Desktop/App/App.webui/obj/Debug/netcoreapp3.1/Razor/Views/Shared/_header.cshtml.g.cs
 /Users/mac/Desktop/App/App.webui/obj/Debug/netcoreapp3.1/Razor/Views/Shared/_noproduct.cshtml.g.cs
 /Users/mac/Desktop/App/App.webui/obj/Debug/netcoreapp3.1/Razor/Views/Shared/_product.cshtml.g.cs
+/Users/mac/Desktop/App/App.webui/obj/Debug/netcoreapp3.1/Razor/Views/Shared/_categories.cshtml.g.cs
+/Users/mac/Desktop/App/App.webui/obj/Debug/netcoreapp3.1/Razor/Views/Shared/Components/Categories/Default.cshtml.g.cs
+/Users/mac/Desktop/App/App.webui/obj/Debug/netcoreapp3.1/Razor/Views/Shared/_Layout.cshtml.g.cs
+/Users/mac/Desktop/App/App.webui/obj/Debug/netcoreapp3.1/Razor/Views/_ViewStart.cshtml.g.cs

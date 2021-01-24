@@ -1,5 +1,7 @@
 using System;
 using Microsoft.AspNetCore.Mvc;
+using App.webui.Models;
+using System.Collections.Generic;
 
 namespace App.webui.Controllers
 {   //localhost:5000/home
@@ -8,11 +10,23 @@ namespace App.webui.Controllers
         //Index action
         public IActionResult Index()
         {
-            int Hour = DateTime.Now.Hour;
-            string msg = Hour > 12 ? "İyi günler" : "Günaydın";
-            ViewBag.Greeting = msg;
-            ViewBag.UserName = "Ahmet";
-            return View();
+            var products = new List<Product>(){
+
+              new Product {Name = "Iphone 8",Price=4000,Description="Güzel"},
+              new Product {Name = "Iphone 6s",Price=2000,Description="Güzel",IsApproved=true},
+              new Product {Name = "Iphone 7",Price=3000,Description="Güzel",IsApproved=true},
+              new Product {Name = "Iphone X",Price=7000,Description="Güzel"}
+
+
+
+           };
+         
+              //view models
+            var productViewModel = new ProductViewModel(){
+                Products = products
+            };
+
+            return View(productViewModel);
         }
         public IActionResult About()
         {
