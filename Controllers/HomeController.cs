@@ -1,29 +1,31 @@
 using System;
 using Microsoft.AspNetCore.Mvc;
-using App.webui.Models;
+
 using System.Collections.Generic;
 
+using web_app.data.Abstract;
+using web_app.business.Abstract;
+using App.webui.Models;
+
 namespace App.webui.Controllers
-{   //localhost:5000/home
+{
+    //localhost:5000/home
     public class HomeController : Controller
     {
+        private IProductService _productService;
+
+        public HomeController(IProductService productService)
+        {
+            this._productService = productService;
+        }
         //Index action
         public IActionResult Index()
         {
-            var products = new List<Product>(){
-
-              new Product {Name = "Iphone 8",Price=4000,Description="Güzel"},
-              new Product {Name = "Iphone 6s",Price=2000,Description="Güzel",IsApproved=true},
-              new Product {Name = "Iphone 7",Price=3000,Description="Güzel",IsApproved=true},
-              new Product {Name = "Iphone X",Price=7000,Description="Güzel"}
-
-
-
-           };
-         
+           
               //view models
-            var productViewModel = new ProductViewModel(){
-                Products = products
+            var productViewModel = new ProductListViewModel(){
+                Products = _productService.GetHomePageProducts()
+                
             };
 
             return View(productViewModel);
@@ -38,6 +40,8 @@ namespace App.webui.Controllers
 
             return View("MyView");
         }
+        
+        
 
     }
 }

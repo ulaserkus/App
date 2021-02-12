@@ -1,4 +1,4 @@
-@model ProductViewModel
+@model ProductListViewModel
 @*razor*@
 @{
     var popularClass = Model.Products.Count > 2 ? "popular" : " ";
@@ -21,7 +21,7 @@
         <div class="row">
             @foreach (var item in products)
             {
-                <div class="col-md-3">
+                <div class="col-md-4">
                     @await Html.PartialAsync("_product",item)
                 </div>
             }
